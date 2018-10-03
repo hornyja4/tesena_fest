@@ -19,7 +19,7 @@ public abstract class PageObject {
 
     public abstract void synchronize();
 
-    protected void waitForElement(WebElement element, WebElement... orElements) {
-        Driver.waitForElement(element, orElements);
+    protected void waitForElement(WebElement element) {
+        Driver.waitForElement(element);
     }
 }

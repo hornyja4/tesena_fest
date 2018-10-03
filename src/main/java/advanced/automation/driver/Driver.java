@@ -53,19 +53,11 @@ public class Driver {
         Driver.capabilities = capabilities;
     }
 
-    public static void waitForElement(WebElement element, WebElement... orElements) {
+    public static void waitForElement(WebElement element) {
         Wait<WebDriver> wait = new WebDriverWait(androidDriver, 20);
         ExpectedCondition<Boolean> expectation = driver -> {
             try {
-                if (element.isDisplayed()) {
-                    return true;
-                }
-                for (WebElement webElement: orElements) {
-                    if (webElement.isDisplayed()) {
-                        return true;
-                    }
-                }
-                return false;
+                return element.isDisplayed();
             } catch (NoSuchElementException | StaleElementReferenceException e) {
                 return false;
             }
