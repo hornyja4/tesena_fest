@@ -40,5 +40,4 @@ smartdriver_tests.iml
 test.iml
 SmartDriver.iml
 
-src/test/resources/
 target/
